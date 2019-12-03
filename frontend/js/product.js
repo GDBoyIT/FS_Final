@@ -9,7 +9,25 @@ $(function () {
         $("#plist").empty();
         // #12 Get all products and display as a table
         // use $.get
-
+        $.get(url, function (data, status) {
+            console.log(status);
+            console.log(data);
+    
+            if (status == 'success') {
+                for (index in data) {
+                    var user = data[index];
+                    var row = `<tr>
+                                    <td scope="row">${user.photo}</td>
+                                    <td>${user.serialno}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.category}</td>
+                                    <td>${user.price}</td>
+                                </tr>`;
+                    $("#plist").append(row);
+                }
+            }
+    
+        });
         // ===============================
     }
     
@@ -30,7 +48,7 @@ $(function () {
 
         // #13 Add new products by calling api
         // use $.post
-
+        $.post(url,newproduct);
         // ===============================
 
     });
