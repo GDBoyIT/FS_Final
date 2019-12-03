@@ -22,7 +22,7 @@ $(function () {
                                     <td>${user.name}</td>
                                     <td>${user.category}</td>
                                     <td>${user.price}</td>
-                                    <td><a href="productdetail.html" class="btn btn-primary">View</a></td>
+                                    <td><a href="productdetail.html" class="btn btn-primary">Edit</a></td>
                                 </tr>`;
                     $("#plist").append(row);
                 }
