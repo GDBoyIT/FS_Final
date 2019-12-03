@@ -22,6 +22,7 @@ $(function () {
                                     <td>${user.name}</td>
                                     <td>${user.category}</td>
                                     <td>${user.price}</td>
+                                    <td><a href="productdetail.html">View</a></td>
                                 </tr>`;
                     $("#plist").append(row);
                 }
@@ -48,7 +49,9 @@ $(function () {
 
         // #13 Add new products by calling api
         // use $.post
-        $.post(url,newproduct);
+
+       $.post(url,newproduct);
+        
         // ===============================
 
     });
