@@ -10,7 +10,22 @@ $(function () {
     function getData() {
         // #14 Get a selected product and display as a form
         // use $.get
+        $.get(url, function (data, status) {
 
+            console.log(status);
+            console.log(data);
+
+            if (status == 'success') {
+                for (index in data) {
+                    var user = data[index];
+                    $("#photo").attr("value", user.photo);
+                    $("#serialno").attr("value", user.serialno);
+                    $("#name").attr("value", user.name);
+                    $("#category").attr("value", user.category);
+                    $("#price").attr("value", user.price);
+                }
+            }
+        });
         // ===============================
     }
 
